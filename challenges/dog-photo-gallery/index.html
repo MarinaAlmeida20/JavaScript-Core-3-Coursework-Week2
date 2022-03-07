@@ -5,60 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dog Photo Gallery</title>
-    <style>
-      body {
-        background-color: rgb(139, 139, 130);
-        box-sizing: border-box;
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-      }
-      #content {
-        text-align: center;
-      }
-      #content img {
-        width: 50%;
-      }
-      li {
-        list-style-type: none;
-      }
-      button {
-        padding: 15px 30px;
-        border-radius: 5px;
-        background-color: black;
-        color: white;
-        cursor: pointer;
-        border: none;
-        font-size: 16px;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="content">
-      <ul id="imageList"></ul>
-      <button>Press</button>
-    </div>
-    <script>
-      const imageList = document.querySelector("#imageList");
-
-      const button = document.querySelector("button");
-      button.addEventListener("click", getRandomPhoto);
-
-      //   console.log(imageList);
-      function getRandomPhoto() {
-        fetch("https://dog.ceo/api/breeds/image/random")
-          .then((response) => response.json())
-          .then((img) => {
-            const li = document.createElement("li");
-            const dogImag = document.createElement("img");
-
-            dogImag.src = img.message;
-
-            li.appendChild(dogImag);
-            imageList.append(li);
-          })
-          .catch((err) => console.log(err));
-      }
-    </script>
+    <h1>Dog gallery</h1>
+    <ul></ul>
+    <button>Get doggo</button>
+    <script src="script.js"></script>
   </body>
 </html>
